@@ -8,10 +8,11 @@ export const getProcessedDataHandler = async (req: Request, res: Response): Prom
         const token = data.token;
         const array = data.data;
         const query = data.query;
-
+        console.log(data.data);
+        console.log(data.query);
         // calculate Segment Sum
         const output = await calculateSegmentSum(array, query);
-
+        console.log(output);
         // send output to Server
         const response = await sendOutputToAPI(output, token);
         // send response to client

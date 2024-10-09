@@ -34,9 +34,13 @@ export async function calculateSegmentSum(array: number[], queries: { type: stri
         if (type == "1") {
             segmentSum = previousSumType1[r + 1] - previousSumType1[l];
         } else {
-            segmentSum = previousSumType2[r + 1] - previousSumType2[l];
+            if(l%2!=0) {//l%2!=0 => arr[l] before process by previousSumType2 is negative
+                //but we need arr[l] > 0
+                segmentSum = -(previousSumType2[r + 1] - previousSumType2[l]);
+            }else{//arr[l] after process by previousSumType2 is positive
+                segmentSum = previousSumType2[r + 1] - previousSumType2[l];
+            }
         }
-
         output.push(segmentSum);
     }
     return output;
