@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "@types/numeral": "^2.0.5",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "multer": "^1.4.5-lts.1",
     "numeral": "^2.0.6",
